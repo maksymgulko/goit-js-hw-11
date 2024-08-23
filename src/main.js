@@ -1,6 +1,7 @@
-import handleSubmit from './js/pixabay-api';
+import { handleSubmit } from './js/pixabay-api';
+import { renderImages } from './js/render-functions';
 
 const submitForm = document.querySelector('.form');
-const submitBtn = document.querySelector('.submit-btn');
-
-submitForm.addEventListener('submit', handleSubmit);
+submitForm.addEventListener('submit', event =>
+  handleSubmit(event, renderImages)
+);

@@ -6,3 +6,27 @@
 */
 /* Common styles */
 @import url('./reset.css');
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.image-gallery {
+  margin: 24px auto;
+  max-width: 1128px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.gallery-item {
+  width: calc((100% - 48px) / 3);
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid #808080;
+}
