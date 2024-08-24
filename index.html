@@ -4,19 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-CgTBfC_f.js">
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/vendor-DkczhqSJ.css">
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-Kst65YeN.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-BrddEoy-.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/vendor-CWKLx11g.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-7P0uzGC4.css">
   </head>
   <body>
     <form class="form">
-      <label>
-        Search
-        <input type="search" name="picture" />
-      </label>
+      <input
+        placeholder="Search images..."
+        type="search"
+        class="form-input"
+        name="picture"
+      />
       <button class="submit-btn" type="submit">Search</button>
     </form>
+    <span class="loader"></span>
     <ul class="image-gallery"></ul>
   </body>
 </html>
