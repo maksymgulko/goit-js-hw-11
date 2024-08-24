@@ -1,7 +1,6 @@
-export const key = '45559560-5df08bb83c1629c82dd907879';
-
-export function handleSubmit(event, renderImages) {
+export default function handleSubmit(event, renderImages) {
   event.preventDefault();
+  const key = '45559560-5df08bb83c1629c82dd907879';
   const form = event.target;
   const searchResult = form.elements.picture.value.trim();
   const url =
