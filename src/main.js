@@ -21,18 +21,28 @@ function handleSubmit(event) {
   const form = event.target;
   const searchResult = form.elements.picture.value.trim();
   loader.style.display = 'inline-block';
-  imageFetch(searchResult).then(response => {
-    if (response.hits.length > 0) {
-      renderImages(response);
+  imageFetch(searchResult)
+    .then(response => {
       loader.style.display = 'none';
-    } else {
+      if (response.hits.length > 0) {
+        renderImages(response);
+        lightbox.refresh();
+      } else {
+        iziToast.show({
+          message: `❌ Sorry, there are no images matching your search query.`,
+          position: 'topRight',
+          backgroundColor: '#F44336',
+          messageColor: '#fff',
+        });
+      }
+    })
+    .catch(error => {
+      loader.style.display = 'none';
       iziToast.show({
-        message: `❌ Sorry, there are no images matching your search query.`,
+        message: `❌ Сталася помилка: ${error.message}`,
         position: 'topRight',
         backgroundColor: '#F44336',
         messageColor: '#fff',
       });
-    }
-  });
-  lightbox.refresh(); //я, відверто кажучи, не впевнений, де ставити рефреш, щоб анімація завантаження показувалася або я неправильно щось роблю з анімацією
+    });
 }
