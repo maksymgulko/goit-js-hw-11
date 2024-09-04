@@ -1,5 +1,6 @@
 export default function renderImages(images) {
   const gallery = document.querySelector('.image-gallery');
+  gallery.innerHTML = '';
   const markup = images.hits
     .map(image => {
       const {

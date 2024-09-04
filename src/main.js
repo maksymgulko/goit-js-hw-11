@@ -13,6 +13,7 @@ const lightbox = new SimpleLightbox('.gallery-link', {
 
 const loader = document.querySelector('.loader');
 const submitForm = document.querySelector('.form');
+const gallery = document.querySelector('.image-gallery');
 
 submitForm.addEventListener('submit', handleSubmit);
 
@@ -28,6 +29,7 @@ function handleSubmit(event) {
         renderImages(response);
         lightbox.refresh();
       } else {
+        gallery.innerHTML = '';
         iziToast.show({
           message: `❌ Sorry, there are no images matching your search query.`,
           position: 'topRight',
