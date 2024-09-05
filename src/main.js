@@ -18,6 +18,7 @@ const gallery = document.querySelector('.image-gallery');
 submitForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
+  gallery.innerHTML = '';
   event.preventDefault();
   const form = event.target;
   const searchResult = form.elements.picture.value.trim();
@@ -29,7 +30,6 @@ function handleSubmit(event) {
         renderImages(response);
         lightbox.refresh();
       } else {
-        gallery.innerHTML = '';
         iziToast.show({
           message: `❌ Sorry, there are no images matching your search query.`,
           position: 'topRight',
